@@ -1,0 +1,100 @@
+//Importar
+@import "CoolKitten-grid";
+@import url(http://fonts.googleapis.com/css?family=Alegreya+Sans:300,400,500,700);
+
+//variables
+@blanco:white;
+@gris:#232323;
+@grisMedio: (@gris + 30);
+@grisClaro:(@grisMedio + 80);
+@rojo:#de1c24;
+@violeta:#662a9d;
+@morado:#4b2da7;
+@azul:#2e3190;
+@darksLateblue:#2d51a7;
+@steelBlue:#2a6a9d;
+@mobile:        ~"only screen and (min-width: 320px)";
+@smallTablet:   ~"only screen and (min-width: 569px)";
+@tablet:        ~"only screen and (min-width: 768px)";
+@laptop:       	~"only screen and (min-width: 1024px)";
+@desktop:       ~"only screen and (min-width: 1140px)";
+@bigScreen:     ~"only screen and (min-width: 1600px)";
+
+//Mixins
+.font-size(@sizeValue) {
+  @remValue: @sizeValue;
+  @pxValue: (@sizeValue * 1);
+  font-size: ~"@{pxValue}px"; 
+  font-size: ~"@{remValue}rem";
+}
+.alegreya(){font-family: 'Alegreya Sans', sans-serif;}
+.light(){font-weight: 300;}
+.regular(){font-weight: 400;}
+.medium(){font-weight: 500;}
+.bold(){font-weight: 700;}
+
+.borderRadius(@radius) {border-radius: @radius;}
+
+.transition(@property:all,@duration:0.3s,@timing:ease-in-out){
+	transition: @property @duration @timing;
+}
+
+//Generales
+html {
+  font-size: 6.25%; /* Sets up the Base 10 stuff */
+}
+body{
+	color: @grisMedio;
+	.alegreya();
+	.font-size(16);
+}
+
+//Header
+header{
+	h1{
+		background: url(../images/UrbanSigns_logo.jpg) no-repeat scroll center center;
+		width: 265px;
+		height: 56px;
+		text-indent: 5000%;
+		background-size: 100% auto;
+		margin: .5em 4em .5em 0;
+		display: inline-block;
+	}
+	nav{
+		display: inline-block;
+		ul{
+			display:inline-block;
+			list-style-type:none;
+			margin:0;
+			padding:0;
+			li{
+				display:inline-block;
+				text-align:left;
+				padding: .5em 1em;
+				margin: 1em 0;
+				&.active{
+					background: @steelBlue;
+					.borderRadius(5px);
+					a, a:link, a:visited, a:hover, a:active{
+						color: @blanco;
+						.transition();
+					}
+					&:hover{
+						background: @rojo;
+					}
+				}
+				a, a:link, a:visited{
+					text-decoration: none;
+					color: @grisMedio;
+					font-variant: small-caps;
+					text-transform: uppercase;
+					.bold();
+					.transition();
+				}
+				a:hover, a:active{
+					color: @rojo;
+				}
+			}
+		}
+	}
+}

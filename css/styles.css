@@ -1,0 +1,168 @@
+@import url(http://fonts.googleapis.com/css?family=Alegreya+Sans:300,400,500,700);
+/* Computer */
+.grid_1 {
+  width: 6.5%;
+}
+.grid_2 {
+  width: 15%;
+}
+.grid_3 {
+  width: 23.5%;
+}
+.grid_4 {
+  width: 32%;
+}
+.grid_5 {
+  width: 40.5%;
+}
+.grid_6 {
+  width: 49%;
+}
+.grid_7 {
+  width: 57.5%;
+}
+.grid_8 {
+  width: 66%;
+}
+.grid_9 {
+  width: 74.5%;
+}
+.grid_10 {
+  width: 83%;
+}
+.grid_11 {
+  width: 91.5%;
+}
+.grid_12 {
+  width: 100%;
+}
+.grid_1,
+.grid_2,
+.grid_3,
+.grid_4,
+.grid_5,
+.grid_6,
+.grid_7,
+.grid_8,
+.grid_9,
+.grid_10,
+.grid_11,
+.grid_12 {
+  margin: 0 2% 1% 0;
+  display: inline-block;
+}
+.alpha {
+  margin-left: 0;
+}
+.omega {
+  margin-right: 0;
+}
+.container {
+  width: 90%;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+.clearfix:after {
+  clear: both;
+  content: ' ';
+  display: block;
+  font-size: 0;
+  line-height: 0;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+* html .clearfix,
+*:first-child + html .clearfix {
+  zoom: 1;
+}
+/* Mobile */
+@media screen and (max-width: 569px) {
+  .grid_1,
+  .grid_2,
+  .grid_3,
+  .grid_4,
+  .grid_5,
+  .grid_6,
+  .grid_7,
+  .grid_8,
+  .grid_9,
+  .grid_10,
+  .grid_11,
+  .grid_12 {
+    width: 100%;
+  }
+}
+html {
+  font-size: 6.25%;
+  /* Sets up the Base 10 stuff */
+}
+body {
+  color: #414141;
+  font-family: 'Alegreya Sans', sans-serif;
+  font-size: 16px;
+  font-size: 16rem;
+}
+header h1 {
+  background: url(../images/UrbanSigns_logo.jpg) no-repeat scroll center center;
+  width: 265px;
+  height: 56px;
+  text-indent: 5000%;
+  background-size: 100% auto;
+  margin: .5em 4em .5em 0;
+  display: inline-block;
+}
+header nav {
+  display: inline-block;
+}
+header nav ul {
+  display: inline-block;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+header nav ul li {
+  display: inline-block;
+  text-align: left;
+  padding: .5em 1em;
+  margin: 1em 0;
+}
+header nav ul li.active {
+  background: #2a6a9d;
+  border-radius: 5px;
+}
+header nav ul li.active a,
+header nav ul li.active a:link,
+header nav ul li.active a:visited,
+header nav ul li.active a:hover,
+header nav ul li.active a:active {
+  color: #ffffff;
+  -webkit-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+}
+header nav ul li.active:hover {
+  background: #de1c24;
+}
+header nav ul li a,
+header nav ul li a:link,
+header nav ul li a:visited {
+  text-decoration: none;
+  color: #414141;
+  font-variant: small-caps;
+  text-transform: uppercase;
+  font-weight: 700;
+  -webkit-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+}
+header nav ul li a:hover,
+header nav ul li a:active {
+  color: #de1c24;
+}

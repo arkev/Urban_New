@@ -35,6 +35,7 @@ body{
 
 //Header
 header{
+    display: flex;
 	h1{
 		background: url(../images/UrbanSigns_logo.jpg) no-repeat scroll center center;
 		width: 265px;
@@ -48,82 +49,30 @@ header{
   		@media @laptop {
 			margin: .5em 1.3em .5em 0;
   		}
-	}
-	nav{
-		@media @mobile {
-			display: none;
+        @media @bigScreen {
+			margin: .5em 4em .5em 0;
   		}
-  		@media @laptop {
-			display: inline-block;
-  		}
-		ul{
-			display:inline-block;
-			list-style-type:none;
-			margin:0;
-			padding:0;
-			li{
-				display:inline-block;
-				margin: 1em 0;
-				a, a:link, a:visited{
-					text-decoration: none;
-					color: @grisMedio;
-					font-variant: small-caps;
-					text-transform: uppercase;
-					.bold();
-					.transition();
-					@media @laptop {
-						padding: .5em;
-			  		}
-			  		@media @desktop {
-						padding: .5em 1em;
-			  		}
-				}
-				a:hover, a:active{
-					color: @rojo;
-				}
-				a.active{
-					background: @steelBlue;
-					text-align:center;
-					.borderRadius(5);
-					.transition();
-					color: @blanco;
-					&:hover{
-						background: @rojo;
-						color: @blanco;
-					}
-				}
-			}
-		}
 	}
+    #cd-main-nav, #cd-nav{
+        display: inline-block;
+    }
+    @media @bigScreen {
+        &.container{max-width: 1400px;}
+        #cd-nav ul li {margin: 0 .6em;}
+    }
 }
 
-/* -------------------------------- 
 
-Modules - reusable parts of our design
-
--------------------------------- */
-.cd-container {
-  /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
-  width: 90%;
-  max-width: 1170px;
-  margin: 0 auto;
-}
-.cd-container::after {
-  /* clearfix */
-  content: '';
-  display: table;
-  clear: both;
-}
 
 #cd-nav {
+    margin-top: 1.5em;
 	ul {
 	  /* mobile first */
 	  position: fixed;
 	  width: 90%;
 	  max-width: 400px;
 	  right: 5%;
-	  bottom: 20px;
-	  border-radius: 0.25em;
+	  bottom: 5px;
 	  .borderRadius(5);
 	  .boxShadow(0, 0, 10px, rgba(232, 74, 100, 0.4));
 	  background:@blanco;
@@ -136,6 +85,35 @@ Modules - reusable parts of our design
 	  .transform(scale(0));
 	  .transformOrigin (100%, 100%);
 	  .transition();
+      @media @tablet{
+        li {
+		  /* Force Hardware Acceleration in WebKit */
+		  backface-visibility: hidden;
+          list-style-type: none;
+		  &:last-child a {border-bottom: none;}
+		  a {
+			    display: block;
+                border-bottom: none;
+                text-decoration: none;
+				color: @grisMedio;
+				font-variant: small-caps;
+				text-transform: uppercase;
+                padding: .35em .593em;
+                &:hover, &:active{
+                    color: @rojo;
+                }
+                &.active{
+                    background: @steelBlue;
+                    .transition();
+                    color: @blanco;
+                    &:hover{
+                        background: @rojo;
+                        color: @blanco;
+                    }
+                }
+			}
+		}
+      }
 	  @media @laptop{
 		  	/* the navigation moves to the top */
 		    width: auto;
@@ -143,23 +121,55 @@ Modules - reusable parts of our design
 		    background: transparent;
 		    visibility: visible;
 		    box-shadow: none;
-		    .absoluta(36px, auto);
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            top: 0;
+            right: 0;
 		    .transform(scale(1));
 		    .transition(all,0s);
 		    li {
-			    display: inline-block;
+                display:inline-block;
+                /* Force Hardware Acceleration in WebKit */
+                backface-visibility: hidden;
+                list-style-type: none;
+                &:last-child a {border-bottom: none;}
 			    a {
+                    display: block;
 				    .opacity(1);
-				    padding: .4em;
-				    margin-left: 1.6em;
 				    border-bottom: none;
+                    text-decoration: none;
+					color: @grisMedio;
+					font-variant: small-caps;
+					text-transform: uppercase;
+                    padding: .35em .593em;
+					.transition();
+                    &:hover, &:active{
+                        color: @rojo;
+                    }
+                    &.active{
+                        background: @steelBlue;
+                        .borderRadius(5);
+                        .transition();
+                        color: @blanco;
+                        &:hover{
+                            background: @rojo;
+                            color: @blanco;
+                        }
+                    }
 				  }
 			}
 	  }
+      @media @desktop{
+          li a {padding: .35em 1.05em;}
+      }
 	  &.is-visible {
 		  visibility: visible;
 		  .transform(scale(1));
 		  .transition();
+          padding: 0;
+          a{.font-size(20);}
 		  /* list items animation */
 		  li:nth-child(1) {
 		    .animation(cd-slide-in, 0.3s);
@@ -183,16 +193,6 @@ Modules - reusable parts of our design
 		    .animation(cd-slide-in, 0.9s);
 		  }
 		}
-	  li {
-		  /* Force Hardware Acceleration in WebKit */
-		  backface-visibility: hidden;
-		  &:last-child a {border-bottom: none;}
-		  a {
-			  display: block;
-			  padding: 1.6em;
-			  border-bottom: 1px solid #eff2f6;
-			}
-		}
 	}
 	@media @laptop{
 		&.is-fixed ul {
@@ -204,6 +204,7 @@ Modules - reusable parts of our design
 		    top: auto;
 		    background: white;
 		    visibility: hidden;
+            right: 5%;
 		    .boxShadow(0,0,10px,rgba(232, 74, 100, 0.4));
 		    .transform(scale(0));
 		    &.has-transitions {
@@ -224,10 +225,7 @@ Modules - reusable parts of our design
 		    li {
 				display: block;
 				a {
-				    padding: 1.6em;
 				    margin-left: 0;
-				    border-bottom: ;
-				    .borderBottom(1px, solid, @whitesmoke);
 				  }
   			}
 		  }
@@ -236,7 +234,7 @@ Modules - reusable parts of our design
 
 .cd-nav-trigger {
   position: fixed;
-  bottom: 20px;
+  bottom: 22px;
   right: 5%;
   width: 44px;
   height: 44px;
@@ -295,156 +293,44 @@ Modules - reusable parts of our design
 		}
 		
 	}
+    @media @laptop{
+        visibility: hidden;
+        .transform(scale(0));
+        .transition();
+    }
 }
 
-@media only screen and (min-width: 1170px) {
-  .cd-nav-trigger {
-    /* the the menu triger is hidden by default on desktop devices */
-    visibility: hidden;
-    -webkit-transform: scale(0);
-    -moz-transform: scale(0);
-    -ms-transform: scale(0);
-    -o-transform: scale(0);
-    transform: scale(0);
-    -webkit-transition: -webkit-transform 0.3s, visibility 0s 0.3s;
-    -moz-transition: -moz-transform 0.3s, visibility 0s 0.3s;
-    transition: transform 0.3s, visibility 0s 0.3s;
-  }
-  .is-fixed .cd-nav-trigger {
-    visibility: visible;
-    -webkit-transition: all 0s;
-    -moz-transition: all 0s;
-    transition: all 0s;
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
-    transform: scale(1);
-    -webkit-animation: cd-bounce-in 0.3s linear;
-    -moz-animation: cd-bounce-in 0.3s linear;
-    animation: cd-bounce-in 0.3s linear;
-  }
+.is-fixed{
+    .cd-nav-trigger{
+        @media @laptop{
+            visibility: visible;
+            .transition(all, 0s);
+            .transform(scale(1));
+            .animation(cd-bounce-in, 0.3s, linear);
+        }
+    }
 }
 
-#cd-gallery-items li {
-  margin-bottom: 1.5em;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  border-radius: 0.25em;
-}
-#cd-gallery-items li img {
-  width: 100%;
-  display: block;
-  border-radius: 0.25em;
-}
-@media only screen and (min-width: 768px) {
-  #cd-gallery-items li {
-    width: 48%;
-    float: left;
-    margin-bottom: 2em;
-    margin-right: 4%;
-  }
-  #cd-gallery-items li:nth-child(2n) {
-    margin-right: 0;
-  }
-}
-@media only screen and (min-width: 1170px) {
-  #cd-gallery-items li {
-    width: 31%;
-    float: left;
-    margin-bottom: 2.5em;
-    margin-right: 3.5%;
-  }
-  #cd-gallery-items li:nth-child(2n) {
-    margin-right: 3.5%;
-  }
-  #cd-gallery-items li:nth-child(3n) {
-    margin-right: 0;
-  }
-}
-
-@-webkit-keyframes cd-slide-in {
-  0% {
-    -webkit-transform: translateX(100px);
-  }
-
-  100% {
-    -webkit-transform: translateY(0);
-  }
-}
-@-moz-keyframes cd-slide-in {
-  0% {
-    -moz-transform: translateX(100px);
-  }
-
-  100% {
-    -moz-transform: translateY(0);
-  }
-}
+/*--- Animaciones ---*/
 @keyframes cd-slide-in {
   0% {
-    -webkit-transform: translateX(100px);
-    -moz-transform: translateX(100px);
-    -ms-transform: translateX(100px);
-    -o-transform: translateX(100px);
-    transform: translateX(100px);
+        .transform(translateX(100px));
   }
-
   100% {
-    -webkit-transform: translateY(0);
-    -moz-transform: translateY(0);
-    -ms-transform: translateY(0);
-    -o-transform: translateY(0);
-    transform: translateY(0);
+        .transform(translateY(0));
   }
 }
-@-webkit-keyframes cd-bounce-in {
-  0% {
-    -webkit-transform: scale(0);
-  }
 
-  60% {
-    -webkit-transform: scale(1.2);
-  }
-
-  100% {
-    -webkit-transform: scale(1);
-  }
-}
-@-moz-keyframes cd-bounce-in {
-  0% {
-    -moz-transform: scale(0);
-  }
-
-  60% {
-    -moz-transform: scale(1.2);
-  }
-
-  100% {
-    -moz-transform: scale(1);
-  }
-}
 @keyframes cd-bounce-in {
   0% {
-    -webkit-transform: scale(0);
-    -moz-transform: scale(0);
-    -ms-transform: scale(0);
-    -o-transform: scale(0);
-    transform: scale(0);
+        .transform(scale(0));
   }
 
   60% {
-    -webkit-transform: scale(1.2);
-    -moz-transform: scale(1.2);
-    -ms-transform: scale(1.2);
-    -o-transform: scale(1.2);
-    transform: scale(1.2);
+        .transform(scale(1.2));
   }
 
   100% {
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
-    transform: scale(1);
+        .transform(scale(1.2));
   }
 }

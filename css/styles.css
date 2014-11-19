@@ -113,6 +113,25 @@ body {
   font-size: 16px;
   font-size: 16rem;
 }
+.container {
+  max-width: 1400px;
+}
+/* imágenes */
+img {
+  max-width: 100%;
+}
+img.centered {
+  display: block;
+  margin: 0 auto;
+}
+img.alignleft {
+  float: left;
+  margin: 1em;
+}
+img.alignright {
+  float: right;
+  margin: 1em;
+}
 header {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -146,9 +165,6 @@ header #cd-nav {
   display: inline-block;
 }
 @media only screen and (min-width: 1400px) {
-  header.container {
-    max-width: 1400px;
-  }
   header #cd-nav ul li {
     margin: 0 .6em;
   }
@@ -292,8 +308,29 @@ header #cd-nav {
   /* list items animation */
 }
 #cd-nav ul.is-visible a {
+  display: block;
+  border-bottom: none;
+  text-decoration: none;
+  color: #414141;
+  font-variant: small-caps;
+  text-transform: uppercase;
+  padding: .35em .593em;
   font-size: 20px;
   font-size: 20rem;
+}
+#cd-nav ul.is-visible a:hover,
+#cd-nav ul.is-visible a:active {
+  color: #de1c24;
+}
+#cd-nav ul.is-visible a.active {
+  background: #2a6a9d;
+  -webkit-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+  color: #ffffff;
+}
+#cd-nav ul.is-visible a.active:hover {
+  background: #de1c24;
+  color: #ffffff;
 }
 #cd-nav ul.is-visible li:nth-child(1) {
   -webkit-animation-name: cd-slide-in;
@@ -562,4 +599,115 @@ header #cd-nav {
     -webkit-transform: scale(1.2);
             transform: scale(1.2);
   }
+}
+/* General Slides */
+.slide {
+  background-attachment: fixed;
+  width: 100%;
+  height: auto;
+  position: relative;
+  padding: 140px 0;
+}
+#inicio {
+  background-image: url(../images/bkg-01.jpg);
+  background-color: #2e3190;
+  color: #ffffff;
+}
+@media only screen and (min-width: 320px) {
+  #inicio.slide {
+    padding: 2em 0;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #inicio.slide {
+    padding: 70px 0;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  #inicio.slide {
+    padding: 140px 0;
+  }
+}
+#inicio .container {
+  overflow-x: hidden;
+}
+#inicio .vectors,
+#inicio .vendors {
+  text-align: center;
+}
+@media only screen and (min-width: 320px) {
+  #inicio .vectors,
+  #inicio .vendors {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  #inicio .vectors,
+  #inicio .vendors {
+    width: 48%;
+  }
+}
+#inicio .vectors {
+  float: left;
+}
+@media only screen and (min-width: 320px) {
+  #inicio .vectors img {
+    height: 250px;
+    width: auto;
+    max-width: inherit;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #inicio .vectors img {
+    height: auto;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+#inicio .vendors {
+  float: right;
+}
+#inicio h2 {
+  font-size: 34px;
+  font-size: 34rem;
+  margin-top: 0;
+}
+#inicio p {
+  font-size: 18px;
+  font-size: 18rem;
+}
+#inicio .buttom {
+  padding: .3em 1em;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-decoration: none;
+  line-height: 3.5em;
+  font-size: 24px;
+  font-size: 24rem;
+  border: 2px solid #ffffff;
+  border-radius: 8px;
+}
+#empresa {
+  text-align: center;
+}
+#empresa.slide {
+  padding: 0;
+}
+#empresa h2 {
+  font-size: 50px;
+  font-size: 50rem;
+  color: #4b2da7;
+}
+#empresa h3 {
+  font-size: 18px;
+  font-size: 18rem;
+  font-weight: 300;
+}
+#empresa p {
+  font-size: 18px;
+  font-size: 18rem;
+}
+#empresa img {
+  border: 10px solid #ffffff;
+  box-shadow: 0 0 10px #919191;
 }

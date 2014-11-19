@@ -2404,6 +2404,28 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/bkg-01.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 119919,
+		"inputAbbreviatedPath": "\/images\/bkg-01.jpg",
+		"outputAbbreviatedPath": "\/images\/bkg-01.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/urban_vectors.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 60625,
+		"inputAbbreviatedPath": "\/images\/urban_vectors.png",
+		"outputAbbreviatedPath": "\/images\/urban_vectors.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/UrbanSigns_logo.jpg": {
 		"fileType": 16384,
 		"ignore": 0,

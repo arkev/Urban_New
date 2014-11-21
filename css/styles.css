@@ -112,9 +112,36 @@ body {
   font-family: 'Alegreya Sans', sans-serif;
   font-size: 16px;
   font-size: 16rem;
+  font-weight: 400;
 }
 .container {
   max-width: 1400px;
+}
+/* General button style (reset) */
+.btn {
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+  padding: 25px 80px;
+  display: inline-block;
+  margin: 15px 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  outline: none;
+  position: relative;
+  -webkit-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+}
+.btn:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  -webkit-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
 }
 /* imágenes */
 img {
@@ -644,38 +671,84 @@ header #cd-nav {
   font-size: 18px;
   font-size: 18rem;
 }
-#inicio .button {
+#inicio button {
   padding: .3em 1em;
   text-transform: uppercase;
   color: #ffffff;
   text-decoration: none;
-  line-height: 3.5em;
+  line-height: 2em;
+  margin-bottom: 1em;
   font-size: 24px;
   font-size: 24rem;
   border: 2px solid #ffffff;
   border-radius: 8px;
+  background: transparent;
+  z-index: 1;
+  /* Button 1b */
+}
+#inicio button:after {
+  width: 100%;
+  height: 0;
+  bottom: 0;
+  left: 0;
+  background: #ffffff;
+  z-index: -4;
+}
+#inicio button:hover,
+#inicio button:active {
+  color: #2e3190;
+}
+#inicio button:hover:after,
+#inicio button:active:after {
+  height: 100%;
+  z-index: -4;
 }
 #empresa {
   text-align: center;
 }
 #empresa.slide {
-  padding: 0;
+  padding: .4em 0 4em;
 }
 #empresa h2 {
   font-size: 50px;
   font-size: 50rem;
   color: #4b2da7;
+  margin-bottom: 0;
 }
 #empresa h3 {
   font-size: 18px;
   font-size: 18rem;
   font-weight: 300;
+  margin: .5em auto 2.5em;
 }
 #empresa p {
   font-size: 18px;
   font-size: 18rem;
+  margin-bottom: 2.5em;
 }
 #empresa img {
   border: 10px solid #ffffff;
   box-shadow: 0 0 10px #919191;
+}
+#testimonios {
+  color: #ffffff;
+  text-align: center;
+  background-image: url(../images/bkg-02.jpg);
+  background-color: #2d51a7;
+}
+#testimonios.slide {
+  padding: 85px 0;
+}
+#testimonios h2 {
+  font-size: 36px;
+  font-size: 36rem;
+}
+#testimonios p {
+  font-size: 24px;
+  font-size: 24rem;
+  font-weight: 300;
+}
+#testimonios span {
+  font-size: 24px;
+  font-size: 24rem;
 }

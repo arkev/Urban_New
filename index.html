@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="robots" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <!-- favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/x-icon" href="favicon.png">
@@ -82,10 +82,43 @@
         <!-- !#testimonios -->
         <article id="testimonios" class="slide" data-slide="3" data-stellar-background-ratio="0.5">
             <h2>¿Qué es lo que opinan nuestros clientes de nosotros?</h2>
-            <p>Dis facilisis placerat sit velit. Pulvinar cursus, quis risus, non tempor non, in odio eu lectus</p>
-            <span>Farmacias Guadalajara</span>
+            <div class="wrapper">
+                <div class="carousel">
+                    <div class="carousel__content">
+                        <div class="item">
+                            <p class="title">Rhoncus amet dictumst in porttitor integer. Parturient, mid cursus, proin tincidunt diam massa, in a, mus vut egestas, tincidunt elit turpis integer magnis cursus vel.</p>
+                            <span class="title title--sub">Nextel</span>
+                        </div>
+                        <div class="item">
+                            <p class="title">Sociis amet sit est magnis? Tempor arcu ut urna, sed quis, duis, porttitor ultricies pid platea, platea elit cursus? Vut nisi tempor ultricies augue, enim nec ut sed</p>
+                            <span class="title title--sub">Pemex</span>
+                        </div>
+                        <div class="item">
+                            <p class="title">Hac dolor, placerat sit lectus mid amet! Elementum elementum! Nec in, porta dictumst magna turpis ut, lectus porta magna, integer turpis porta duis parturient</p>
+                            <span class="title title--sub">Telcel</span>
+                        </div>
+                        <div class="item">
+                            <p class="title">Urna elementum! Augue, in lacus, sed turpis mid penatibus, pellentesque, nec nec risus rhoncus! Integer scelerisque tincidunt, sit natoque, est scelerisque in</p>
+                            <span class="title title--sub">Mapfre</span>
+                        </div>
+                        <div class="item">
+                            <p class="title">turpis amet pulvinar. In vut pid! Pellentesque et? Porttitor ac enim aliquet! Egestas amet lundium pid proin egestas sociis magnis enim nunc nunc ultrices.</p>
+                            <span class="title title--sub">Banamex</span>
+                        </div>
+                        <div class="item">
+                            <p class="title">Dis facilisis placerat sit velit. Pulvinar cursus, quis risus, non tempor non, in odio eu lectus</p>
+                            <span class="title title--sub">Farmacias Guadalajara</span>
+                        </div>
+                    </div>
+
+                    <div class="carousel__nav">
+                        <a href="#0" class="nav nav--left icon-left"></a>
+                        <a href="#0" class="nav nav--right icon-right"></a>
+                    </div>
+
+                </div>
+            </div>
         </article>
-        <!-- /testimonios -->
 
         <!-- !#Servicios -->
         <article id="servicios" class="slide" data-slide="4" data-stellar-background-ratio="0.5">
@@ -137,8 +170,11 @@
     <script src="js/min/waypoints.min.js"></script>
     <!-- Easing functions -->
     <script src="bower_components/jquery.easing/js/jquery.easing.min.js"></script>
+    <!-- Transiciones -->
+    <script src="bower_components/jquery.transit/jquery.transit.js"></script>
     <!-- Mis funcioness -->
     <script src="js/min/funciones-min.js"></script>
+    <script src="js/min/carousel.js"></script>
 </body>
 
 </html>

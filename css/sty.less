@@ -11,6 +11,7 @@
 @grisMedio: (@gris + 30);
 @grisClaro:(@grisMedio + 80);
 @rojo:#de1c24;
+@darkRed:(@rojo - #333);
 @violeta:#662a9d;
 @morado:#4b2da7;
 @azul:#2e3190;
@@ -77,6 +78,27 @@ img {
         float: right;
         margin: 1em;
     }
+}
+
+/* On the flex container */
+.flexcontainer() {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   /* You can set flex-wrap and flex-direction individually */
+   flex-direction: row;
+   flex-wrap: wrap;
+   /* Or do it all in one line with flex flow */
+   flex-flow: row wrap;
+   /* tweak the where items line up on the row */
+   /* valid values are: flex-start, flex-end, space-between, space-around, stretch */
+   align-content: center;
+}
+
+.tituloSeccion(@color:@morado,@margen:@arguments){
+    .font-size(50);
+    color: @color;
+    margin:@margen;
 }
 
 //Header
@@ -459,11 +481,7 @@ header{
 #empresa{
     &.slide {padding: .4em 0 4em;}
     text-align: center;
-    h2{
-        .font-size(50);
-        color: @morado;
-        margin-bottom: 0;
-    }
+    h2{.tituloSeccion(@morado,.83em 0 0);}
     h3{
         .font-size(18);
         .light();
@@ -557,3 +575,91 @@ header{
     }
   }
 }  
+
+#servicios{
+    text-align: center;
+    .flexcontainer();
+    &.slide {padding: 50px 0;}
+    h2{.tituloSeccion(@morado,0 0 1em);width: 100%;}
+    section{
+        height: 280px;
+        width: 280px;
+        background:(@grisClaro+#666-11);
+        overflow: hidden;
+        .border(1px, solid, (@grisClaro+#333+27));
+        div {
+            color: @morado;
+            margin-top: 95px;
+            .font-size(55);
+            .transition();
+            &.icon-caja-de-luz {
+                line-height: .7em;
+                .font-size(70);
+            }
+            &.icon-letras{
+                line-height: 1em;
+                margin-top: 0;
+                margin-top: 85px;
+                height: 83px;
+                .transition();
+                .font-size(100);
+            }
+            &.icon-neon{
+                line-height: .75em;
+                margin-top: 80px;
+                .font-size(75);
+                .transition();
+                &:before {.textShadow(0, 0, 6px, @morado);}
+            }
+        }
+        h3{
+            color: @negro;
+            margin: 0 auto .5em;
+            .font-size(21);
+            .bold();
+        }
+        p{
+            width: 0;
+            line-height: 0;
+            margin: 0 auto;
+            .opacity(0);
+            .font-size(0);
+            .transition();
+        }
+        button{
+            background: @rojo;
+            color: @blanco;
+            transition: none;
+            padding: 10px 30px;
+            .font-size(18);
+            .boxShadow(0, 6px, 0, @darkRed);
+            .borderRadius(20);
+            .opacity(0);
+            .transition();
+            &:hover {
+                top: 2px;
+	            .boxShadow(0, 4px, 0, @darkRed);
+            }
+            &:active {
+                top: 6px;
+	            .boxShadow(0, 0, 0, @darkRed);
+            }
+        }
+        &:hover{
+            div{
+                margin-top: 10px;
+                &.icon-letras{margin-top: 0;}
+                &.icon-neon{margin-top: 0;}
+            }
+            p{
+                width: 90%;
+                line-height: 1.5em;
+                .opacity(1);
+                .font-size(14);
+            }
+            button{
+                .opacity(1);
+            }
+        }
+    }
+}

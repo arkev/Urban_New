@@ -94,6 +94,13 @@ function inicio() {
     }
 }
 
+//Remplazar el evento hover por touchstar
+var myLinks = document.getElementsByClassName('hover');
+for(var i = 0; i < myLinks.length; i++){
+	myLinks[i].addEventListener('touchstart', function(){this.className = "hover";}, false);
+	myLinks[i].addEventListener('touchend', function(){this.className = "";}, false);
+}
+
 (function (i, s, o, g, r, a, m) {
     i['GoogleAnalyticsObject'] = r;
     i[r] = i[r] || function () {

@@ -96,10 +96,37 @@ function inicio() {
 
 //Remplazar el evento hover por touchstar
 var myLinks = document.getElementsByClassName('hover');
-for(var i = 0; i < myLinks.length; i++){
-	myLinks[i].addEventListener('touchstart', function(){this.className = "hover";}, false);
-	myLinks[i].addEventListener('touchend', function(){this.className = "";}, false);
+for (var i = 0; i < myLinks.length; i++) {
+    myLinks[i].addEventListener('touchstart', function () {
+        this.className = "hover";
+    }, false);
+    myLinks[i].addEventListener('touchend', function () {
+        this.className = "";
+    }, false);
 }
+
+//Grid del portafolio
+$(function () {
+    Grid.init();
+});
+
+//Portfolio Filter
+$(".filtro").click(function filtrar(){
+    $(".selected").removeClass("selected");
+    $(this).addClass("selected");
+});
+
+$("#especiales").click(function filtrarEspeciales() {
+    $(".entry").addClass("hide").removeClass("show";
+    $(".especiales").addClass("show").removeClass("hide");
+});
+
+$("#todo").click(function noFiltrar() {
+    $(".entry").removeClass("hide").addClass("show");
+});
+
+
+//Google Analytics
 
 (function (i, s, o, g, r, a, m) {
     i['GoogleAnalyticsObject'] = r;

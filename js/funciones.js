@@ -117,8 +117,58 @@ $(".filtro").click(function filtrar(){
 });
 
 $("#especiales").click(function filtrarEspeciales() {
-    $(".entry").addClass("hide").removeClass("show";
-    $(".especiales").addClass("show").removeClass("hide");
+    var especiales = $(".elevados") || $(".caja_luz") || $(".impresion") || $(".letras");
+    if (especiales = true){
+        $(".elevados").addClass("hide");
+        $(".caja_luz").addClass("hide");
+        $(".impresion").addClass("hide");
+        $(".letras").addClass("hide");
+        $(".especiales").removeClass("hide").addClass("show");
+    } 
+});
+
+$("#elevados").click(function filtrarElevados() {
+    var elevados = $(".especiales") || $(".caja_luz") || $(".impresion") || $(".letras");
+    if (elevados = true){
+        $(".especiales").addClass("hide");
+        $(".caja_luz").addClass("hide");
+        $(".impresion").addClass("hide");
+        $(".letras").addClass("hide");
+        $(".elevados").removeClass("hide").addClass("show");
+    } 
+});
+
+$("#caja_luz").click(function filtrarCajaLuz() {
+    var caja = $(".especiales") || $(".elevados") || $(".impresion") || $(".letras");
+    if (caja = true){
+        $(".especiales").addClass("hide");
+        $(".elevados").addClass("hide");
+        $(".impresion").addClass("hide");
+        $(".letras").addClass("hide");
+        $(".caja_luz").removeClass("hide").addClass("show");
+    } 
+});
+
+$("#impresion").click(function filtrarImpresion() {
+    var impresion = $(".especiales") || $(".elevados") || $(".caja_luz") || $(".letras");
+    if (impresion = true){
+        $(".especiales").addClass("hide");
+        $(".elevados").addClass("hide");
+        $(".caja_luz").addClass("hide");
+        $(".letras").addClass("hide");
+        $(".impresion").removeClass("hide").addClass("show");
+    } 
+});
+
+$("#letras").click(function filtrarLetras() {
+    var letras = $(".especiales") || $(".elevados") || $(".caja_luz") || $(".impresión");
+    if (impresion = true){
+        $(".especiales").addClass("hide");
+        $(".elevados").addClass("hide");
+        $(".caja_luz").addClass("hide");
+        $(".impresion").addClass("hide");
+        $(".letras").removeClass("hide").addClass("show");
+    } 
 });
 
 $("#todo").click(function noFiltrar() {

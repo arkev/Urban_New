@@ -979,8 +979,6 @@ header #cd-nav {
   padding: 0;
   margin-bottom: 1em;
   height: auto!important;
-  -webkit-transition: all 0.3s ease-in-out;
-          transition: all 0.3s ease-in-out;
 }
 #portafolio ul li {
   display: inline-block;
@@ -988,16 +986,18 @@ header #cd-nav {
           transition: all 0.3s ease-in-out;
 }
 #portafolio ul li.show {
-  display: inline-block;
   opacity: 1;
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
   filter: alpha(opacity=100);
+  height: 265px;
+  width: 265px;
 }
 #portafolio ul li.hide {
-  display: none;
   opacity: 0;
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
   filter: alpha(opacity=0);
+  height: 0;
+  width: 0;
 }
 #portafolio h2 {
   font-size: 50px;

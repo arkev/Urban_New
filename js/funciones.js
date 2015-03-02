@@ -201,6 +201,56 @@ document.getElementsByName('cmail')[0].placeholder='Email';
 document.getElementsByName('ctelefono')[0].placeholder='Teléfono';
 
 
+
+function alucobond(){
+	document.forms["form_cotizador"]["tanuncio"].value = "alucobond";
+	$("[data-value=alucobond]").addClass("cs-selected");
+	$("#cservicios .cs-placeholder").text("Alucobond");
+}
+
+function caja(){
+	document.forms["form_cotizador"]["tanuncio"].value = "caja-luz";
+	$("[data-value=caja-luz]").addClass("cs-selected");
+	$("#cservicios .cs-placeholder").text("Caja de luz");
+}
+
+function elevados(){
+	document.forms["form_cotizador"]["tanuncio"].value = "elevados";
+	$("[data-value=elevados]").addClass("cs-selected");
+	$("#cservicios .cs-placeholder").text("Elevados");
+}
+
+function especiales(){
+	document.forms["form_cotizador"]["tanuncio"].value = "especiales";
+	$("[data-value=especiales]").addClass("cs-selected");
+	$("#cservicios.cs-placeholder").text("Especiales");
+}
+
+function impresion(){
+	document.forms["form_cotizador"]["tanuncio"].value = "impresion";
+	$("[data-value=impresion]").addClass("cs-selected");
+	$("#cservicios .cs-placeholder").text("Impresión");
+}
+
+function letras(){
+	document.forms["form_cotizador"]["tanuncio"].value = "letras";
+	$("[data-value=letras]").addClass("cs-selected");
+	$("#cservicios .cs-placeholder").text("Letras individuales");
+}
+
+function neon(){
+	document.forms["form_cotizador"]["tanuncio"].value = "neon";
+	$("[data-value=neon]").addClass("cs-selected");
+	$("#cservicios .cs-placeholder").text("Neón");
+}
+
+function totem(){
+	document.forms["form_cotizador"]["tanuncio"].value = "totem";
+	$("[data-value=totem]").addClass("cs-selected");
+	$("#cservicios .cs-placeholder").text("Tótem");
+}
+
+
 //Google Analytics
 (function (i, s, o, g, r, a, m) {
 	i['GoogleAnalyticsObject'] = r;

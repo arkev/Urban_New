@@ -1,7 +1,6 @@
 $(document).on("ready", inicio);
 
 function inicio() {
-
 	$(window).stellar();
 
 	var links = $('.navigation').find('li');
@@ -198,10 +197,12 @@ $('#form_contacto').html5form({
 });
 document.getElementsByName('cnombre')[0].placeholder='Nombre';
 document.getElementsByName('cmail')[0].placeholder='Email';
+document.getElementsByName('nombre')[0].placeholder='Nombre';
+document.getElementsByName('mail')[0].placeholder='Email';
 document.getElementsByName('ctelefono')[0].placeholder='Teléfono';
 
 
-
+//Servicios
 function alucobond(){
 	document.forms["form_cotizador"]["tanuncio"].value = "alucobond";
 	$("[data-value=alucobond]").addClass("cs-selected");
@@ -249,6 +250,83 @@ function totem(){
 	$("[data-value=totem]").addClass("cs-selected");
 	$("#cservicios .cs-placeholder").text("Tótem");
 }
+
+//mapa
+$("#showmap").click(function mostrarMapa(){
+	if ($("#map").hasClass("hide")) {
+    	$("#map").removeClass("hide").addClass("show");
+	} 
+	else {
+    	$("#map").addClass("hide").removeClass("show");
+	}
+});
+
+//Variables
+var map;
+
+//Funciones
+function initialize(pos) {
+  // Create an array of styles.
+  var styles = [
+    {
+      featureType: "all",
+      elementType: "all",
+      stylers: [
+        { invert_lightness: true },
+        { saturation: 10 },
+        { lightness: 30 },
+        { gamma: 0.5 },
+        { hue: "#2A6A9D" }
+      ]
+    }
+  ];
+
+  // Create a new StyledMapType object, passing it the array of styles,
+  // as well as the name to be displayed on the map type control.
+  var styledMap = new google.maps.StyledMapType(styles,
+    {name: "Styled Map"});
+  
+  lat = 20.704957; 
+  long = -103.349220; 
+  var mapOptions = {
+    draggable : true,
+    disableDoubleClickZoom: true,
+    mapTypeControl:false,
+    mapTypeControlOptions: {
+        style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+      },
+    mapTypeId: google.maps.MapTypeId.ROADMAP,
+      overviewMapControl: false,
+      overviewMapControlOptions: {
+        opened: false,
+      },
+    panControl: false,
+    scaleControl: false,
+    scrollwheel: false,
+    zoom: 16,
+    zoomControl: true,
+    zoomControlOptions: {
+        style: google.maps.ZoomControlStyle.LARGE,
+      },
+    center: new google.maps.LatLng(lat, long),
+    mapTypeControlOptions: {
+      mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
+    }
+  };
+  map = new google.maps.Map(document.getElementById('map'),
+      mapOptions);
+  var marker = new google.maps.Marker({
+        position: new google.maps.LatLng(lat, long),
+        map: map,
+        title:"UrbanSigns"
+      });
+   //Associate the styled map with the MapTypeId and set it to display.
+  map.mapTypes.set('map_style', styledMap);
+  map.setMapTypeId('map_style');
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
 
 
 //Google Analytics

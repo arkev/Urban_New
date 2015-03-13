@@ -949,7 +949,7 @@ header {
 }
 
 #cotizador{
-	padding: 3em 0;
+	padding: 3em 0 7em;
     h2{
 		.tituloSeccion(@morado,0);
 		width: 100%;
@@ -1304,4 +1304,194 @@ textarea {
 	width: 8em;
 	margin: 1em;
 	float: right;
+}
+
+//Contacto
+#contacto {
+	background-image: url(../images/urban-contacto.jpg);
+	color: @blanco;
+	padding: 3em 0 0;
+	position: relative;
+	@media @mobile{
+		background-size:inherit;
+	}
+	@media @laptop{
+		background-size: auto 100%;
+	}
+	@media @desktop{
+		background-size: 100% auto;
+	}
+	h2 {
+		.tituloSeccion(@blanco, 0);
+		width: 100%;
+		text-align: center;
+		margin-bottom: 0.5em
+	}
+	.grid_5 {
+		text-align: right;
+		@media @mobile{
+			margin: 0;
+		}
+		@media @smallTablet{
+			width: 49.5%;
+		}
+		.dato {
+			border-right: 1px solid #8D8D8D;
+			display: inline-table;
+			width: 75%;
+			padding-right: 5%;
+			margin-bottom: 10px;
+			h3 {
+				.regular();
+				.font-size(18);
+				color: #8D8D8D;
+				margin: 0 0 3px 0;
+			}
+			a,p,address {
+				text-decoration: none;
+				color: @blanco;
+				.light();
+				.font-size(21);
+				margin: 3px 0;
+				font-style: normal;
+			}
+		}
+		.icono {
+			width: 19%;
+			display: inline-table;
+			.espacio {
+				display: block;
+				height: 1.3em;
+				&:before {
+					content: "\00a0";
+				}
+			}
+			.telefono, .nextel, .pin, .sobre {
+				float: left;
+				margin-left: 1em;
+				&:before {
+					.urban();
+					color: #8D8D8D;
+					.font-size(24);
+				}
+			}
+			.telefono:before{content: "n";}
+			.nextel:before{content: "o";}
+			.pin:before{content: "p";}
+			.sobre:before{content: "q";}
+		}
+	}
+	.grid_6 {
+		float: right;
+		@media @mobile{
+			margin: 1em 0;
+			float: none;
+			display: inline-block;
+		}
+		input[type="text"], input[type="email"], lable, textarea{
+			.regular();
+			.font-size(18);
+		}
+		textarea{
+			border: 0;
+			height: 10em;
+			@media @mobile{
+				width: 93%;
+				margin: 0 8px;
+			}
+			@media @tablet{
+				height: 8em;
+			}
+			@media @laptop{
+				height: 9em;
+			}
+		}
+		input[type="text"], input[type="email"], textarea{
+			border-bottom: 3px solid #8d8d8d;
+			background: rgba(0, 0, 0, .3);
+			color:@blanco!important;
+		}
+		input[type="text"], input[type="email"]{
+			width: 43%;
+			margin: 0 1%;
+			display: inline-block;
+			@media @mobile{
+				width: 90%;
+				margin: 8px;
+			}
+		}
+		lable{color: #8D8D8D;}
+		.btn-7 {
+			background: #515151;
+			box-shadow: 0 5px #8d8d8d;
+		}
+		#res_contacto {
+			float: left;
+			width: 60%;
+		}
+	}
+	#barra{
+		background: #404040;
+		width: 100%;
+		display: block;
+		height: 72px;
+		button{
+			display: block;
+			margin: 0 auto;
+			border-left: 2px solid #232323;
+			border-right: 2px solid #232323;
+			color: #8d8d8d;
+			.font-size(24);
+			.medium();
+			padding: 0 1em;
+			height: 72px;
+			background: #404040;
+			border-top: 0;
+			border-bottom: 0;
+			&:before{
+				.urban();
+				content: "p";
+				.font-size(30);
+				float: left;
+				margin-right: 8px;
+			}
+		}
+	}
+	#mapa{
+		.transition();
+		#map{
+			height: 450px;
+			width: 100%;
+			img {max-width: inherit;}
+			&.hide{
+				position: absolute;
+				top: 0;
+				opacity: 0;
+			}
+			&.show{
+				position:relative;
+				top: 0;
+				opacity: 1;
+			}
+		}
+	}
+}
+
+//Footer
+footer{
+	padding: 2em 0!important;
+	text-align: center;
+	background: #232323;
+	color: #8d8d8d;
+	a{
+		color: #8d8d8d;
+		&:hover{color: @blanco;}
+		&.face, &.mail{
+			.urban();
+			text-decoration: none;
+			font-size: 40px;
+			display: inline-block;
+			margin: 12px 1.3em;
+		}
+	}
 }
